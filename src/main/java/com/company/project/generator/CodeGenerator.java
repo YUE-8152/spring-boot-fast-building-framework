@@ -44,7 +44,7 @@ public class CodeGenerator {
     private static final String DATE = new SimpleDateFormat("yyyy-MM-dd HH:MM:ss").format(new Date());
 
     public static void main(String[] args) {
-        genCode("order", "order_item");
+        genCode("order_item");
         //genCodeByCustomModelName("输入表名","输入自定义Model名称");
     }
 
@@ -85,6 +85,8 @@ public class CodeGenerator {
         PluginConfiguration pluginConfiguration = new PluginConfiguration();
         pluginConfiguration.setConfigurationType("tk.mybatis.mapper.generator.MapperPlugin");
         pluginConfiguration.addProperty("mappers", MAPPER_INTERFACE_REFERENCE);
+//        pluginConfiguration.setConfigurationType("org.mybatis.generator.plugins.SerializablePlugin");
+//        pluginConfiguration.setConfigurationType("org.mybatis.generator.plugins.ToStringPlugin");
         context.addPluginConfiguration(pluginConfiguration);
 
         //设置是否生成注释
