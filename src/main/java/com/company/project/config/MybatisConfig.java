@@ -13,7 +13,7 @@ import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-import static com.company.project.common.constant.ProjectConstant.*;
+import static com.company.project.common.constant.GeneratorConstant.*;
 
 /**
  * Mybatis & Mapper & PageHelper 配置
