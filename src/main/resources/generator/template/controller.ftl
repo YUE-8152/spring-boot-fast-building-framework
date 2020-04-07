@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -24,7 +25,7 @@ public class ${modelNameUpperCamel}Controller {
     private ${modelNameUpperCamel}Service ${modelNameLowerCamel}Service;
 
     @PostMapping("/add")
-    public Result add(${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public Result add(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.insert(${modelNameLowerCamel});
         return ResultGenerator.genSuccessResult();
     }
@@ -36,7 +37,7 @@ public class ${modelNameUpperCamel}Controller {
     }
 
     @PostMapping("/update")
-    public Result update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public Result update(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
         return ResultGenerator.genSuccessResult();
     }
