@@ -56,6 +56,16 @@ public abstract class AbstractService<T> implements Service<T> {
     }
 
     @Override
+    public void deleteByCondition(T model) {
+        mapper.deleteByCondition(model);
+    }
+
+    @Override
+    public List<T> find(T model) {
+        return mapper.select(model);
+    }
+
+    @Override
     public T findBy(String fieldName, Object value) throws TooManyResultsException {
         try {
             T model = modelClass.newInstance();
