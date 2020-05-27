@@ -55,4 +55,10 @@ public class ${modelNameUpperCamel}Controller {
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.success(pageInfo);
     }
+
+    @PostMapping("/select")
+    public Result list(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
+        List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.find(${modelNameLowerCamel});
+        return ResultGenerator.success(list);
+    }
 }
